@@ -2,21 +2,22 @@ package com.example.sns.model.entity;
 
 import com.example.sns.model.UserRole;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
-@Table(name = "\"user\"")
 @Getter
 @Setter
+@Table(name = "\"user\"")
 @SQLDelete(sql = "UPDATE \"user\" SET deleted_at = NOW() where id=?")
 @Where(clause = "deleted_at is NULL")
+@NoArgsConstructor
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +26,7 @@ public class UserEntity {
     @Column(name = "user_name")
     private String userName;
 
-    @Column(name="password")
+    //@Column(name="password")
     private String password;
 
     @Column(name="role")
