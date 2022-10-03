@@ -25,7 +25,7 @@ public class AlarmResponse {
                 alarm.getId(),
                 alarm.getAlarmType(),
                 alarm.getArgs(),
-                alarm.getAlarmType().getAlramText(),
+                alarm.getAlarmType().getAlarmText(),
                 alarm.getRegisteredAt(),
                 alarm.getUpdatedAt(),
                 alarm.getDeletedAt()

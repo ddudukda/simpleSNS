@@ -10,5 +10,5 @@ public enum AlarmType {
     NEW_LIKE_ON_POST("new like!"),
     ;
 
-    private final String alramText;
+    private final String alarmText;
 }

@@ -15,11 +15,11 @@ import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "\"alarm\"", indexes = {
         @Index(name = "user_id_idx", columnList = "user_id")
 })
-@Getter
-@Setter
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @SQLDelete(sql = "UPDATE \"alarm\" SET deleted_at = NOW() where id=?")
 @Where(clause = "deleted_at is NULL")
@@ -42,9 +42,9 @@ public class AlarmEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    @ManyToOne
+/*    @ManyToOne
     @JoinColumn(name = "post_id")
-    private PostEntity post;
+    private PostEntity post;*/
 
     @Column(name="registered_at")
     private Timestamp registeredAt;
