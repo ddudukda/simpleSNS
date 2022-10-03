@@ -81,7 +81,7 @@ public class PostService {
         likeEntityRepository.save(LikeEntity.of(userEntity,postEntity));
 
         //alram save
-        alarmEntityRepository.save(AlarmEntity.of(postEntity.getUser(), AlarmType.NEW_COMMENT_ON_POST, new AlarmArgs(userEntity.getId(),postEntity.getId())));
+        alarmEntityRepository.save(AlarmEntity.of(postEntity.getUser(), AlarmType.NEW_LIKE_ON_POST, new AlarmArgs(userEntity.getId(),postEntity.getId())));
     }
 
     @Transactional

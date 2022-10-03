@@ -15,13 +15,13 @@ import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
-@Table(name = "\"alram\"", indexes = {
+@Table(name = "\"alarm\"", indexes = {
         @Index(name = "user_id_idx", columnList = "user_id")
 })
 @Getter
 @Setter
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
-@SQLDelete(sql = "UPDATE \"alram\" SET deleted_at = NOW() where id=?")
+@SQLDelete(sql = "UPDATE \"alarm\" SET deleted_at = NOW() where id=?")
 @Where(clause = "deleted_at is NULL")
 public class AlarmEntity {
 
